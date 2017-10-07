@@ -1,0 +1,41 @@
+----------------------------java-----------------------
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+apt-get install oracle-java7-installer
+sudo apt-get install oracle-java7-set-default
+ echo ${JAVA_HOME}
+---------------grails-----------------------------------
+curl -s get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install grails
+grails -version
+echo ${GRAILS_HOME}
+---------------mysql-------------------------------------
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mysql-server
+mysql -u root -p
+-------------------youtuben downloder-------------------
+sudo apt-get install youtube-dl
+youtube-dl -F  {video URL}
+youtube-dl -f  {format code} {video URL}
+-----------------------workbench---------------
+sudo apt-get update 
+cd /tmp
+wget http://goo.gl/EUsdLB -O mysql-workbench-amd64.deb 
+sudo dpkg -i --force-depends mysql-workbench-amd64.deb
+sudo apt-get -f install
+----------------tomcat-------------
+sudo apt-cache search tomcat
+sudo apt-get install tomcat7-admin
+sudo apt-get install tomcat7 
+service tomcat7 restart
+sudo service tomcat7 start
+sudo service tomcat7 stop
+
+----------install git------------------------------------
+
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git 
+ 

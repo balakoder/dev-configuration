@@ -1,0 +1,46 @@
+netstat -tulpn
+
+----------------------------------------tomcat-------------
+udo service tomcat7 stop
+sudo service tomcat7 start
+sudo tail -f /var/lib/tomcat7/logs/catalina.out
+sudo nano /etc/tomcat7/tomcat-users.xml
+------------------install .sh file---------------------
+chmod +x netbeans-8.1-javaee-linux.sh
+ ./netbeans-8.1-javaee-linux.s
+
+----------------------------------jekkin conf-----------------
+#!/bin/bash
+
+# Umask set so all in developer group can access and debug Jenkins jobs.
+# Assign user jenkins to be in the developer group.
+umask 002
+
+export JENKINS_HOME=/var/jenkins/jenkins
+export JENKINS_USER="jenkins"
+export JAVA_HOME=/usr/java/latest
+export CLASSPATH=$JAVA_HOME/lib/tools.jar:./
+export ANT_HOME=/opt/apache-ant-1.8.1
+export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
+export JENKINS_PORT="8080"
+export JENKINS_AJP_PORT="8009"
+export JENKINS_DEBUG_LEVEL="5"
+export JENKINS_ENABLE_ACCESS_LOG="yes"
+export JENKINS_HANDLER_MAX="10"
+export JENKINS_HANDLER_IDLE="20"
+
+java -Djava.awt.headless=true -DJENKINS_HOME=$JENKINS_HOME -jar $JENKINS_HOME/jenkins.war --accessLoggerClassName=winstone.accesslog.SimpleAccessLogger --simpleAccessLogger.format=combined --simpleAccessLogger.file=$JENKINS_HOME/logs/access_log --prefix=/jenkins --daemon
+-------------------------------------------------------python-------------------------------------
+$ sudo apt-get install build-essential checkinstall
+$ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+
+$ cd /usr/src
+$ wget https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
+$ tar xzf Python-2.7.10.tgz
+$ cd Python-2.7.10
+$ sudo ./configure
+$ sudo make altinstall
+# python2.7 -V
+
+Python 2.7.1
+----------------------------------------------------------------------

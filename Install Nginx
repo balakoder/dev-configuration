@@ -1,0 +1,86 @@
+Install Nginx:
+
+Before installing nginx, download and sign the repository.
+
+wget http://nginx.org/keys/nginx_signing.key
+sudo apt-key add nginx_signing.key
+Add nginx repository by appending the following to the end of the /etc/apt/sources.list file.
+
+sudo nano /etc/apt/sources.list
+Append this,
+
+deb http://nginx.org/packages/ubuntu/ trusty  nginx
+deb-src http://nginx.org/packages/ubuntu/ trusty  nginx
+Install the Nginx by issuing the following command.
+
+sudo apt-get update
+sudo apt-get install nginx
+Starting Nginx:
+
+Once installed, start the Nginix by using the following command.
+
+sudo /etc/init.d/nginx start
+Once started. Navigate the web browser to Nginx server(IP Address or Host Name). The following image shows the default Welcome Screen of Nginx.
+
+CentOS 7 - Nginx Default Page
+CentOS 7 – Nginx Default Page
+Configuration File:
+
+The name of the default configuration file is nginx.conf, located in /etc/nginx directory. Configuration file is based on directives and parameters, each directive ends with a semi colon. The following shows the directives for worker connection and in which user name Nginx process should run.
+
+user nginx;
+worker_processes 1;
+events {
+worker_connections 1024;
+}
+Creating a Virtual Server:
+
+We must setup at least one virtual server for Nginx, in order to process the HTTP request by Nginx. When Nginx process the request, it looks for the server directive in http context. You can add multiple server directives, to define multiple virtual servers.
+
+Default virtual server config file is /etc/nginx/conf.d/default.conf, if you open and see that; first line itself a virtual server for localhost and listening on port 80.
+
+server {
+listen 80;
+server_name localhost;
+}
+You will find the location directive, which will tell the server to look for the static file when the requests comes for the localhost.
+
+location / {
+root /usr/share/nginx/html;
+index index.html index.htm;
+}
+Additionally you can mention the error pages.
+
+error_page 500 502 503 504 /50x.html;
+location = /50x.html {
+root /usr/share/nginx/html;
+}
+The above is the minimum configuration for a virtual server, you can find the full configuration here.
+
+Example:
+
+The following virtual server will accept the request for server.itzgeek.com, create a configuration file in /etc/nginx/conf.d or copy the default configuration file.
+
+sudo cp /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/itzgeek.conf
+Edit in such a way that, it receives the request. Minimal configuration will look like below.
+
+sudo nano /etc/nginx/conf.d/itzgeek.conf
+server {
+listen 80;
+server_name server.itzgeek.com;
+location / {
+root /usr/share/nginx/html/itzgeek;
+index index.html index.htm;
+}
+}
+Create root directory.
+
+sudo mkdir /usr/share/nginx/html/itzgeek
+Create Index.html page.
+
+sudo nano /usr/share/nginx/html/itzgeek/index.html
+Put some line, for example “This is ITzGeek Home”. Once done, close the file.
+
+Restart the Nginx service.
+
+sudo /etc/init.d/nginx restart

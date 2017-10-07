@@ -1,0 +1,7 @@
+sudo apt-get install tomcat7
+sudo service tomcat7 status
+sudo service tomcat7 start
+sudo service tomcat7 stop
+
+Bin folder for tomcat7 is at /usr/share/tomcat7 and logs and config are are at /usr/lib/tomcat7
+ 

@@ -1,0 +1,20 @@
+Installation of Adminer in Linux
+Go the official Adminer site and download the latest source files (i.e version 4.0.2) using below link.
+
+http://www.adminer.org/en/#download
+Alternatively, you may also grab the latest source package using the following wget command.
+
+[root@tecmint ~]# wget http://downloads.sourceforge.net/adminer/adminer-4.0.2.zip
+Unzip adminer’s zip file, which will create adminer directory with files.
+
+[root@tecmint ~]# unzip adminer-4.0.2.zip
+Copy ‘adminer-4.0.2‘ directory into DocumentRoot of your web server.
+
+[root@tecmint ~]# cp -r adminer-4.0.2 /var/www/html/		[For RedHat based Systems]
+
+[root@tecmint ~]# cp -r adminer-4.0.2 /var/www/			[For Debian based Systems]
+Finally, open and point to your browser at ‘adminer‘ directory.
+
+http://localhost/adminer-4.02/adminer
+OR
+http://ip-address/adminer-4.02/adminer

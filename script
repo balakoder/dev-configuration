@@ -1,0 +1,88 @@
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+sudo apt-get update
+sudo apt-get install jenkins
+
+If your /etc/init.d/jenkins file fails to start jenkins, edit the /etc/default/jenkins to replace the line
+HTTP_PORT=8080
+HTTP_PORT=8081
+
+
+sudo nano /etc/init.d/jenkins 
+
+
+Here, 8081 was chosen but you can put another port available.
+
+
+
+http://localhost:8081/login?from=%2F
+----------------------------------------------------------------------------------------
+ echo $SHELL
+ ------------------tomcat----------------------
+cd /var/lib/tomcat7
+.bin/startup.sh
+/var/lib/tomcat7 $ sudo service tomcat7 stop
+sudo gedit /usr/share/tomcat7/bin/catalina.sh
+
+/etc/init.d/tomcat7
+
+sudo cp /usr/share/jenkins/jenkins.war /var/lib/jenkins/
+
+sudo tail -f /var/log/tomcat7/catalina.out
+
+ps -ef | grep java
+
+http://localhost/phpmyadmin
+running on apache2
+netstat -ltnpa | grep -i --colour LISTEN
+
+
+service jenkins restart
+http://localhost:8081/login?from=%2F
+-------------------------------------------------------------------jekkin conf--------------------
+
+
+
+----------------------------------------------------------------------------------------------------------------
+$ sudo add-apt-repository ppa:gilir/lubuntu
+$ sudo apt-get update
+$ sudo apt-get install gnome-mplayer
+$ sudo gnome-mplayer 
+
+--------------------------------------------------------------------+
+unable to play HEVC files on ubuntu 14.04 LTE
+
+sudo apt-add-repository ppa:strukturag/libde265
+sudo add-apt-repository ppa:videolan/stable-daily
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install gstreamer0.10-libde265
+--------------------------------------------------
+sudo apt-get install vlc-plugin-libde265
+
+
+winscp file transfer from windows to windows
+
+----------------------------------------------
+MySQL Workbench Installation
+
+
+sudo apt-get update 
+
+cd /tmp 
+
+wget http://goo.gl/EUsdLB -O mysql-workbench-amd64.deb 
+
+sudo dpkg -i --force-depends mysql-workbench-amd64.deb
+
+
+sudo apt-get -f install
+-----------------------------------------
+
+
+
+
+
+
+

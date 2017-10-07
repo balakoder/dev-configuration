@@ -1,0 +1,29 @@
+SDKMAN!  
+This tool makes installing Grails on any Bash platform (Mac OSX, Linux, Cygwin, Solaris or FreeBSD) very easy.
+Simply open a new terminal and enter:
+
+$ curl -s get.sdkman.io | bash
+Follow the instructions on-screen to complete installation.
+Open a new terminal or type the command:
+
+$ source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+Then install the latest stable Grails:
+
+$ sdk install grails
+After installation is complete and you've made it your default version, test it with:
+
+$ grails -version
+That's all there is to it!
+
+ grails create-app myApp
+
+ $ cd myApp
+
+ $ grails runApp
+
+ 
+ 
+
+
+
